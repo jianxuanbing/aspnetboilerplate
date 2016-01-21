@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.Migrations;
 using BeiDreamAbp.Domain;
-using BeiDreamAbp.Domain.User;
+using BeiDreamAbp.Domain.Users;
 using BeiDreamAbp.Infrastructure.Ef.EntityFramework;
 
 namespace BeiDreamAbp.Infrastructure.Ef.Migrations

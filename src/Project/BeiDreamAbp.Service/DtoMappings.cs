@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using BeiDreamAbp.Domain.User;
-using BeiDreamAbp.Service.User;
-using BeiDreamAbp.Service.User.Dtos;
+using BeiDreamAbp.Domain.Users;
+using BeiDreamAbp.Service.Users.Dtos;
 
 namespace BeiDreamAbp.Service
 {

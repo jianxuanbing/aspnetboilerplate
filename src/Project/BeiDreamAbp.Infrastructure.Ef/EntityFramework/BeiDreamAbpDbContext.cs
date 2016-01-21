@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using Abp.EntityFramework;
 using BeiDreamAbp.Domain;
-using BeiDreamAbp.Domain.User;
+using BeiDreamAbp.Domain.Users;
 
 namespace BeiDreamAbp.Infrastructure.Ef.EntityFramework
 {

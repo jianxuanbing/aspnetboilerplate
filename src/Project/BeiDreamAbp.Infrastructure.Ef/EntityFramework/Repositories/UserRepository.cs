@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Abp.EntityFramework;
-using BeiDreamAbp.Domain.User;
+using BeiDreamAbp.Domain.Users;
 
 namespace BeiDreamAbp.Infrastructure.Ef.EntityFramework.Repositories
 {
