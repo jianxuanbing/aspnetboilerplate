@@ -13,7 +13,7 @@ namespace BeiDreamAbp.Infrastructure.Ef.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201601210211599_InitialCreate"; }
+            get { return "201601220834043_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

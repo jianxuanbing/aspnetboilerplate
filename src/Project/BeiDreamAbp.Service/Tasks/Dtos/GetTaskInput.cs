@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Abp.Application.Services.Dto;
 
-namespace BeiDreamAbp.Service.Users.Dtos
+namespace BeiDreamAbp.Service.Tasks.Dtos
 {
-    public class GetUsersInput : IInputDto
+    public class GetTasksInput : IInputDto
     {
         [Required]
         public string Name { get; set; }

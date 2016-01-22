@@ -1,23 +1,25 @@
 ﻿using System.Web.Mvc;
+using Abp.Web.Mvc.Authorization;
 using Abp.Web.Mvc.Controllers;
-using BeiDreamAbp.Service.Users;
-using BeiDreamAbp.Service.Users.Dtos;
+using BeiDreamAbp.Service.Tasks;
+using BeiDreamAbp.Service.Tasks.Dtos;
 
 namespace BeiDreamAbp.Presentation.Controllers
 {
+    [AbpMvcAuthorize]
     public class HomeController : AbpController
     {
-        private readonly IUserService _userService;
-        public HomeController(IUserService userService)
+        private readonly ITaskService _taskService;
+        public HomeController(ITaskService taskService)
         {
             //LocalizationSourceName = "SimpleTaskSystem";
-            _userService = userService;
+            _taskService = taskService;
         }
 
         // GET: Home
         public ActionResult Index()
         {
-            var users = _userService.GetUsers(new GetUsersInput() { Name = "AAAA" });
+            var tasks = _taskService.GetTasks(new GetTasksInput() { Name = "AAAA" });
             return View();
         }
     }

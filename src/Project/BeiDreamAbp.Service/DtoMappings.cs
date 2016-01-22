@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using BeiDreamAbp.Domain.Users;
-using BeiDreamAbp.Service.Users.Dtos;
+using BeiDreamAbp.Domain.Tasks;
+using BeiDreamAbp.Service.Tasks.Dtos;
 
 namespace BeiDreamAbp.Service
 {
@@ -8,7 +8,7 @@ namespace BeiDreamAbp.Service
     {
         public static void Map()
         {
-            Mapper.CreateMap<User, UserDto>();
+            Mapper.CreateMap<Task, TaskDto>();
         }
     }
 }

@@ -1,17 +1,31 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using Abp.Domain.Entities;
+﻿using System;
+using Abp.Authorization.Users;
+using Abp.Extensions;
+using BeiDreamAbp.Domain.MultiTenancy;
+using Microsoft.AspNet.Identity;
 
 namespace BeiDreamAbp.Domain.Users
 {
-    /// <summary>
-    /// 用户信息实体
-    /// </summary>
-    [Table("BeiDreamAbp.Users")]  //生成到数据库表的表名称
-    public class User : Entity<long>
+    public class User : AbpUser<Tenant, User>
     {
-        /// <summary>
-        /// 用户名称
-        /// </summary>
-        public virtual string Name { get; set; }
+        public const string DefaultPassword = "123qwe";
+
+        public static string CreateRandomPassword()
+        {
+            return Guid.NewGuid().ToString("N").Truncate(16);
+        }
+
+        public static User CreateTenantAdminUser(int tenantId, string emailAddress, string password)
+        {
+            return new User
+            {
+                TenantId = tenantId,
+                UserName = AdminUserName,
+                Name = AdminUserName,
+                Surname = AdminUserName,
+                EmailAddress = emailAddress,
+                Password = new PasswordHasher().HashPassword(password)
+            };
+        }
     }
 }

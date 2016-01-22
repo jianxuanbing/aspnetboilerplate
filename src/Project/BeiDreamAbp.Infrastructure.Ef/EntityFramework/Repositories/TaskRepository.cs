@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Abp.EntityFramework;
-using BeiDreamAbp.Domain.Users;
+using BeiDreamAbp.Domain.Tasks;
 
 namespace BeiDreamAbp.Infrastructure.Ef.EntityFramework.Repositories
 {
-    public class UserRepository : BeiDreamAbpRepositoryBase<User, long>, IUserRepository
+    public class TaskRepository : BeiDreamAbpRepositoryBase<Task, long>, ITaskRepository
     {
-        public UserRepository(IDbContextProvider<BeiDreamAbpDbContext> dbContextProvider) : base(dbContextProvider)
+        public TaskRepository(IDbContextProvider<BeiDreamAbpDbContext> dbContextProvider) : base(dbContextProvider)
         {
         }
 
-        public List<User> GetUsers(string name)
+        public List<Task> GetTasks(string name)
         {
             var query = GetAll();
             if (!string.IsNullOrWhiteSpace(name))
