@@ -1,5 +1,5 @@
 ﻿using Abp.MultiTenancy;
-using BeiDreamAbp.Domain.Users;
+using BeiDreamAbp.Domain.Authorization.Users;
 
 namespace BeiDreamAbp.Domain.MultiTenancy
 {

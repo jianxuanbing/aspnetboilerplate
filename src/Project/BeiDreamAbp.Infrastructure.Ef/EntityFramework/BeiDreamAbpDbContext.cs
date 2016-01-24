@@ -4,9 +4,9 @@ using Abp.EntityFramework;
 using Abp.Zero.EntityFramework;
 using BeiDreamAbp.Domain;
 using BeiDreamAbp.Domain.Authorization.Roles;
+using BeiDreamAbp.Domain.Authorization.Users;
 using BeiDreamAbp.Domain.MultiTenancy;
 using BeiDreamAbp.Domain.Tasks;
-using BeiDreamAbp.Domain.Users;
 
 namespace BeiDreamAbp.Infrastructure.Ef.EntityFramework
 {

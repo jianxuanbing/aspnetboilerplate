@@ -20,15 +20,15 @@ namespace BeiDreamAbp.Domain
             //项目启动的配置文件多租户是否开始
             Configuration.MultiTenancy.IsEnabled = true;
             //新增或移除当前程序集的本地资源文件信息(暂时理解)
-            //Configuration.Localization.Sources.Add(
-            //    new DictionaryBasedLocalizationSource(
-            //        BeiDreamAbpConsts.LocalizationSourceName,
-            //        new XmlEmbeddedFileLocalizationDictionaryProvider(
-            //            Assembly.GetExecutingAssembly(),
-            //            "BeiDream.NewModuleZero.Localization.Source"
-            //            )
-            //        )
-            //    );
+            Configuration.Localization.Sources.Add(
+                new DictionaryBasedLocalizationSource(
+                    BeiDreamAbpConsts.LocalizationSourceName,
+                    new XmlEmbeddedFileLocalizationDictionaryProvider(
+                        Assembly.GetExecutingAssembly(),
+                        "BeiDreamAbp.Localization.Source"
+                        )
+                    )
+                );
 
             AppRoleConfig.Configure(Configuration.Modules.Zero().RoleManagement);
 

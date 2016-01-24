@@ -4,7 +4,7 @@ using Abp.Extensions;
 using BeiDreamAbp.Domain.MultiTenancy;
 using Microsoft.AspNet.Identity;
 
-namespace BeiDreamAbp.Domain.Users
+namespace BeiDreamAbp.Domain.Authorization.Users
 {
     public class User : AbpUser<Tenant, User>
     {

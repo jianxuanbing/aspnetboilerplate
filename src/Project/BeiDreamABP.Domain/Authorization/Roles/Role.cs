@@ -1,6 +1,6 @@
 ﻿using Abp.Authorization.Roles;
+using BeiDreamAbp.Domain.Authorization.Users;
 using BeiDreamAbp.Domain.MultiTenancy;
-using BeiDreamAbp.Domain.Users;
 
 namespace BeiDreamAbp.Domain.Authorization.Roles
 {
