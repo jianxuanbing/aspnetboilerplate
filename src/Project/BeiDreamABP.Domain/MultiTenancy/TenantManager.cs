@@ -2,6 +2,7 @@
 using Abp.MultiTenancy;
 using BeiDreamAbp.Domain.Authorization.Roles;
 using BeiDreamAbp.Domain.Authorization.Users;
+using BeiDreamAbp.Domain.Editions;
 
 namespace BeiDreamAbp.Domain.MultiTenancy
 {

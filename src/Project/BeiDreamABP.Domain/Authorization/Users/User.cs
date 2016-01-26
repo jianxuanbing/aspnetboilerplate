@@ -8,7 +8,17 @@ namespace BeiDreamAbp.Domain.Authorization.Users
 {
     public class User : AbpUser<Tenant, User>
     {
-        public const string DefaultPassword = "123qwe";
+        //public const string DefaultPassword = "123qwe";
+
+        //public const int MinPlainPasswordLength = 6;
+        /// <summary>
+        /// 用户头像ID
+        /// </summary>
+        public virtual Guid? ProfilePictureId { get; set; }
+        /// <summary>
+        /// 下次登录是否修改密码
+        /// </summary>
+        public virtual bool ShouldChangePasswordOnNextLogin { get; set; }
 
         public static string CreateRandomPassword()
         {

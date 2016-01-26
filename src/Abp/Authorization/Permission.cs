@@ -37,8 +37,8 @@ namespace Abp.Authorization
         public ILocalizableString Description { get; set; }
 
         /// <summary>
-        /// Is this permission granted by default.
-        /// Default value: false.
+        /// Is this permission granted by default.（如果为true，此权限是默认授权给用户）
+        /// Default value: false.（默认值为false）
         /// </summary>
         public bool IsGrantedByDefault { get; set; }
 

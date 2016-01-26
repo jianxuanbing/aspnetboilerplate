@@ -2,6 +2,7 @@
 using BeiDreamAbp.Domain;
 using BeiDreamAbp.Domain.Tasks;
 using BeiDreamAbp.Infrastructure.Ef.EntityFramework;
+using BeiDreamAbp.Infrastructure.Ef.Migrations.SeedData;
 
 namespace BeiDreamAbp.Infrastructure.Ef.Migrations
 {
@@ -14,7 +15,8 @@ namespace BeiDreamAbp.Infrastructure.Ef.Migrations
 
         protected override void Seed(BeiDreamAbpDbContext context)
         {
-            context.Tasks.AddOrUpdate(p => p.Name, new Task() {Name = "AAAA"}, new Task { Name = "Douglas Adams" });
+            new InitialDbBuilder(context).Create();
+            //context.Tasks.AddOrUpdate(p => p.Name, new Task() {Name = "AAAA"}, new Task { Name = "Douglas Adams" });
         }
     }
 }

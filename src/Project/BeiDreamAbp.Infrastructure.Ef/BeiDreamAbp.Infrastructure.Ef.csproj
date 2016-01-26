@@ -57,6 +57,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Bcl.Immutable.1.0.34\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,11 +74,14 @@
     <Compile Include="EntityFramework\BeiDreamAbpDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\BeiDreamAbpRepositoryBase.cs" />
     <Compile Include="EntityFramework\Repositories\TaskRepository.cs" />
-    <Compile Include="Migrations\201601220834043_InitialCreate.cs" />
-    <Compile Include="Migrations\201601220834043_InitialCreate.Designer.cs">
-      <DependentUpon>201601220834043_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201601260835458_InitialCreate.cs" />
+    <Compile Include="Migrations\201601260835458_InitialCreate.Designer.cs">
+      <DependentUpon>201601260835458_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\SeedData\DefaultEditionCreator.cs" />
+    <Compile Include="Migrations\SeedData\DefaultTenantRoleAndUserCreator.cs" />
+    <Compile Include="Migrations\SeedData\InitialDbBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,8 +115,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601220834043_InitialCreate.resx">
-      <DependentUpon>201601220834043_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601260835458_InitialCreate.resx">
+      <DependentUpon>201601260835458_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

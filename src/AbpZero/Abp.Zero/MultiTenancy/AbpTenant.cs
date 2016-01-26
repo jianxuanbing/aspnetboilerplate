@@ -18,9 +18,13 @@ namespace Abp.MultiTenancy
         where TTenant : AbpTenant<TTenant, TUser>
     {
         /// <summary>
-        /// "Default".
+        /// "Default".(默认的租户名称)
         /// </summary>
         public const string DefaultTenantName = "Default";
+        /// <summary>
+        /// 默认的租户显示名称
+        /// </summary>
+        public const string DefaultTenantDisplayName = "DisplayDefault";
 
         /// <summary>
         /// "^[a-zA-Z][a-zA-Z0-9_-]{1,}$".

@@ -4,6 +4,9 @@ using Abp.MultiTenancy;
 
 namespace BeiDreamAbp.Domain.Authorization
 {
+    /// <summary>
+    /// 系统所有权限集合类
+    /// </summary>
     public class BeiDreamAbpAuthorizationProvider : AuthorizationProvider
     {
         public override void SetPermissions(IPermissionDefinitionContext context)

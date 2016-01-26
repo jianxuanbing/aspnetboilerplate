@@ -18,8 +18,8 @@ namespace Abp.Authorization.Users
         where TUser : AbpUser<TTenant, TUser>
     {
         /// <summary>
-        /// UserName of the admin.
-        /// admin can not be deleted and UserName of the admin can not be changed.
+        /// 用户名为admin的用户
+        /// admin用户不能被删除、admin用户不能修改.
         /// </summary>
         public const string AdminUserName = "admin";
 

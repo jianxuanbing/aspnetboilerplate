@@ -201,6 +201,8 @@ namespace BeiDreamAbp.Infrastructure.Ef.Migrations
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
+                        ProfilePictureId = c.Guid(),
+                        ShouldChangePasswordOnNextLogin = c.Boolean(nullable: false),
                         AuthenticationSource = c.String(maxLength: 64),
                         Name = c.String(nullable: false, maxLength: 32),
                         Surname = c.String(nullable: false, maxLength: 32),
