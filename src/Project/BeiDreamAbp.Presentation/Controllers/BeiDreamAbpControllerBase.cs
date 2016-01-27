@@ -15,7 +15,7 @@ namespace BeiDreamAbp.Presentation.Controllers
     {
         protected BeiDreamAbpControllerBase()
         {
-            //LocalizationSourceName = BeiDreamAbpConsts.LocalizationSourceName;
+            LocalizationSourceName = BeiDreamAbpConsts.LocalizationSourceName;
         }
 
         protected virtual void CheckModelState()

@@ -46,7 +46,7 @@ namespace BeiDreamAbp.Presentation.Controllers
         }
         [HttpPost]
         [DisableAuditing]
-        public async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "", string returnUrlHash = "")
+        public async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "")
         {
             CheckModelState();
 
@@ -60,12 +60,7 @@ namespace BeiDreamAbp.Presentation.Controllers
 
             if (string.IsNullOrWhiteSpace(returnUrl))
             {
-                returnUrl = Request.ApplicationPath;
-            }
-
-            if (!string.IsNullOrWhiteSpace(returnUrlHash))
-            {
-                returnUrl = returnUrl + returnUrlHash;
+                returnUrl = Url.Action("Index", "Home");
             }
 
             return Json(new MvcAjaxResponse { TargetUrl = returnUrl });
