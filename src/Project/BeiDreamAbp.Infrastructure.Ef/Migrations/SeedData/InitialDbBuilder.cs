@@ -16,10 +16,10 @@ namespace BeiDreamAbp.Infrastructure.Ef.Migrations.SeedData
         {
             _context.DisableAllFilters();
 
-            new DefaultEditionCreator(_context).Create();
-            //new DefaultLanguagesCreator(_context).Create();
-            new DefaultTenantRoleAndUserCreator(_context).Create();
-            //new DefaultSettingsCreator(_context).Create();
+            new DefaultEditionBuilder(_context).Build();
+            new DefaultLanguagesBuilder(_context).Build();
+            new DefaultTenantRoleAndUserBuilder(_context).Build();
+            new DefaultSettingsBuilder(_context).Build();
 
             _context.SaveChanges();
         }

@@ -12,15 +12,15 @@ using BeiDreamAbp.Infrastructure.Ef.EntityFramework;
 
 namespace BeiDreamAbp.Infrastructure.Ef.Migrations.SeedData
 {
-    public class DefaultTenantRoleAndUserCreator
+    public class DefaultTenantRoleAndUserBuilder
     {
         private readonly BeiDreamAbpDbContext _context;
 
-        public DefaultTenantRoleAndUserCreator(BeiDreamAbpDbContext context)
+        public DefaultTenantRoleAndUserBuilder(BeiDreamAbpDbContext context)
         {
             _context = context;
         }
-        public void Create()
+        public void Build()
         {
             CreateHostAndUsers();
             CreateDefaultTenantAndUsers();

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="en">
   <texts>
-    <text name="Hello" value="Hello" />
+    <text name="About" value="About" />
   </texts>
 </localizationDictionary>

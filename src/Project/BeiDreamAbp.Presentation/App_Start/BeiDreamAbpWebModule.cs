@@ -11,7 +11,7 @@ namespace BeiDreamAbp.Presentation
          public override void PreInitialize()
          {
              //Use database as language management
-             //Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
+             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
 
              //Configure navigation/menu
              Configuration.Navigation.Providers.Add<BeiDreamAbpNavigationProvider>();

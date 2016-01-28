@@ -74,13 +74,15 @@
     <Compile Include="EntityFramework\BeiDreamAbpDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\BeiDreamAbpRepositoryBase.cs" />
     <Compile Include="EntityFramework\Repositories\TaskRepository.cs" />
-    <Compile Include="Migrations\201601270853189_InitialCreate.cs" />
-    <Compile Include="Migrations\201601270853189_InitialCreate.Designer.cs">
-      <DependentUpon>201601270853189_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201601280920091_InitialCreate.cs" />
+    <Compile Include="Migrations\201601280920091_InitialCreate.Designer.cs">
+      <DependentUpon>201601280920091_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Migrations\SeedData\DefaultEditionCreator.cs" />
-    <Compile Include="Migrations\SeedData\DefaultTenantRoleAndUserCreator.cs" />
+    <Compile Include="Migrations\SeedData\DefaultEditionBuilder.cs" />
+    <Compile Include="Migrations\SeedData\DefaultLanguagesBuilder.cs" />
+    <Compile Include="Migrations\SeedData\DefaultSettingsBuilder.cs" />
+    <Compile Include="Migrations\SeedData\DefaultTenantRoleAndUserBuilder.cs" />
     <Compile Include="Migrations\SeedData\InitialDbBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -115,8 +117,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601270853189_InitialCreate.resx">
-      <DependentUpon>201601270853189_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201601280920091_InitialCreate.resx">
+      <DependentUpon>201601280920091_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

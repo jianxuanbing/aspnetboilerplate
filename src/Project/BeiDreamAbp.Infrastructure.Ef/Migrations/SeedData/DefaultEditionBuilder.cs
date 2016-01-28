@@ -5,16 +5,16 @@ using BeiDreamAbp.Infrastructure.Ef.EntityFramework;
 
 namespace BeiDreamAbp.Infrastructure.Ef.Migrations.SeedData
 {
-    public class DefaultEditionCreator
+    public class DefaultEditionBuilder
     {
         private readonly BeiDreamAbpDbContext _context;
 
-        public DefaultEditionCreator(BeiDreamAbpDbContext context)
+        public DefaultEditionBuilder(BeiDreamAbpDbContext context)
         {
             _context = context;
         }
 
-        public void Create()
+        public void Build()
         {
             CreateEditions();
         }
