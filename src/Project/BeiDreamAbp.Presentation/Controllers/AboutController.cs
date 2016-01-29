@@ -8,11 +8,13 @@ using Abp.Web.Mvc.Authorization;
 namespace BeiDreamAbp.Presentation.Controllers
 {
     [AbpMvcAuthorize]
-    public class AboutController : Controller
+    public class AboutController : BeiDreamAbpControllerBase
     {
         // GET: About
         public ActionResult Index()
         {
+            var about = L("About");
+            ViewBag.Title = about;
             return View();
         }
     }

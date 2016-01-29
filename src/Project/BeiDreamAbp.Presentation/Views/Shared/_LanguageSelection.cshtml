@@ -1,0 +1,14 @@
+﻿@model BeiDreamAbp.Presentation.Models.Home.LanguageSelectionViewModel
+<div class="btn btnlanguageconfig" id="languageconfig" tabindex="1">
+    <b>@Model.CurrentLanguage.DisplayName</b>&nbsp;<i class="@Model.CurrentLanguage.Icon"></i>
+    <div class="dropbox configbox" id="language">
+        @foreach (var language in Model.Languages)
+        {
+            <div>
+                <i class="@language.Icon"></i>
+                <a href="/AbpLocalization/ChangeCulture?cultureName=@(language.Name)&returnUrl=@(Request.Url)"> @language.DisplayName</a>
+            </div>
+        }
+    </div>
+</div>
+

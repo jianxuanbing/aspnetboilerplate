@@ -1,0 +1,19 @@
+﻿@model BeiDreamAbp.Presentation.Models.Home.UserMenuOrLoginLinkViewModel
+@if (Model.LoginInformations != null)
+{
+    <a id="user" href="javascript:;"><img src="/images/DefaultUser.jpg" alt="BeiDream" />@Html.Raw(Model.GetShownLoginName())</a>
+    <div id="userbox" class="dropbox">
+        <div class="user-header">
+            <img src="/images/DefaultUser.jpg" alt="BeiDream" />
+            <p>BeiDream - Web Developer<small>born 1988.</small></p>
+        </div>
+        <div class="user-footer">
+            <div class="btnleft"><a href="javascript:;">修改密码</a> </div>
+            <div class="btnright"><a href="@Url.Action("Logout", "Account")">退出登录</a> </div>
+        </div>
+    </div>
+}
+else
+{
+    <a href="@Url.Action("Login", "Account")"><i class="fa fa-sign-in"></i> @L("LogIn")</a>
+}

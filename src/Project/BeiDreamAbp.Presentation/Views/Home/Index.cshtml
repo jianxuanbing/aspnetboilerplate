@@ -1,7 +1,25 @@
-﻿
+﻿@model BeiDreamAbp.Service.Tasks.Dtos.GetTasksOutput
 @{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
 
-<h2>桌面</h2>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>桌面</title>
+</head>
+<body>
+<div>
+    <h2>桌面首页</h2>
+    @foreach (var task in Model.Tasks)
+    {
+        <ul>
+            <li>@task.Name</li>
+        </ul>
+    }
+
+</div>
+</body>
+</html>

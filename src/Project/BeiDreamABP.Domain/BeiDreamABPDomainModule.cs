@@ -28,7 +28,7 @@ namespace BeiDreamAbp.Domain
                     BeiDreamAbpConsts.LocalizationSourceName,
                     new XmlEmbeddedFileLocalizationDictionaryProvider(
                         Assembly.GetExecutingAssembly(),
-                        "BeiDreamAbp.Localization.Source"
+                        "BeiDreamAbp.Domain.Localization.Source"
                         )
                     )
                 );

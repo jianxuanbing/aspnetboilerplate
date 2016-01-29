@@ -30,14 +30,14 @@ namespace BeiDreamAbp.Presentation
                     "Users",
                     L("Users"),
                     url: "/Users",
-                    icon: "icon-users",
+                    icon: "fa fa-navicon",
                     requiredPermissionName: PermissionNames.SystemsManagePages_Administration_Users
                     )
                 ).AddItem(new MenuItemDefinition(
                         "Roles",
                         L("Roles"),
                         url: "/Roles",
-                        icon: "icon-roles",
+                        icon: "fa fa-music",
                         requiredPermissionName: PermissionNames.SystemsManagePages_Administration_Roles
                     )
                 );

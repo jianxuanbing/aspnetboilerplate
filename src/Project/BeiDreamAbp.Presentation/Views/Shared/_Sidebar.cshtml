@@ -3,31 +3,32 @@
 
 @foreach (var menuItem in Model.Menu.Items)
 {
-    <li class="@(Model.CurrentPageName == menuItem.Name ? "active" : "")">
+    <li>
         @if (menuItem.Items.IsNullOrEmpty())
+        {
+            <a class="menuItem" href="@menuItem.Url">
+                @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
+                {
+                    <i class="@menuItem.Icon"></i>
+                }
+                <span class="nav-label">@menuItem.DisplayName</span>
+            </a>
+        }
+        else
         {
             <a href="@menuItem.Url">
                 @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
                 {
                     <i class="@menuItem.Icon"></i>
                 }
-                @menuItem.DisplayName
+                <span class="nav-label">@menuItem.DisplayName</span>
+                <span class="fa"><i class="fa fa-angle-left"></i></span>
             </a>
-        }
-        else
-        {
-            <a href="" data-toggle="dropdown">
-                @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
-                {
-                    <i class="@menuItem.Icon"></i>
-                }
-                @menuItem.DisplayName
-            </a>
-            <ul class="dropdown-menu">
+            <ul class="nav nav-second-level">
                 @foreach (var subMenuItem in menuItem.Items)
                 {
                     <li>
-                        <a href="@subMenuItem.Url">
+                        <a class="menuItem" href="@subMenuItem.Url">
                             @if (!string.IsNullOrWhiteSpace(subMenuItem.Icon))
                             {
                                 <i class="@subMenuItem.Icon"></i>
@@ -38,5 +39,5 @@
                 }
             </ul>
         }
-    </li>
+</li>
 }
