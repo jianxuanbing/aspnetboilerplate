@@ -27,19 +27,22 @@ namespace BeiDreamAbp.Presentation
                         requiredPermissionName: PermissionNames.SystemsManagePages_Tenants
                         )
                 ).AddItem(new MenuItemDefinition(
+                    "Administration",
+                    L("Administration"),
+                    icon: "fa fa-navicon"
+                    ).AddItem(new MenuItemDefinition(
                     "Users",
                     L("Users"),
                     url: "/Users",
                     icon: "fa fa-navicon",
                     requiredPermissionName: PermissionNames.SystemsManagePages_Administration_Users
-                    )
-                ).AddItem(new MenuItemDefinition(
+                    )).AddItem(new MenuItemDefinition(
                         "Roles",
                         L("Roles"),
                         url: "/Roles",
                         icon: "fa fa-music",
                         requiredPermissionName: PermissionNames.SystemsManagePages_Administration_Roles
-                    )
+                    ))
                 );
         }
         private static ILocalizableString L(string name)

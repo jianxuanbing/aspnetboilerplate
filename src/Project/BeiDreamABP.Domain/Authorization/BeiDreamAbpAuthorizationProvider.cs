@@ -16,12 +16,12 @@ namespace BeiDreamAbp.Domain.Authorization
 
             //租赁方的权限集合添加,需配置为 multiTenancySides: MultiTenancySides.Host
             var tenants = pages.CreateChildPermission(PermissionNames.SystemsManagePages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
-            ////权限管理菜单
-            //var administration = pages.CreateChildPermission(PermissionNames.SystemsManagePages_Tenants, L("Administration"));
+            //权限管理菜单
+            var administration = pages.CreateChildPermission(PermissionNames.SystemsManagePages_Administration, L("Administration"));
             //用户管理
-            var users = pages.CreateChildPermission(PermissionNames.SystemsManagePages_Administration_Users, L("Users"));
+            var users = administration.CreateChildPermission(PermissionNames.SystemsManagePages_Administration_Users, L("Users"));
             //角色管理
-            var roles = pages.CreateChildPermission(PermissionNames.SystemsManagePages_Administration_Roles, L("Roles"));
+            var roles = administration.CreateChildPermission(PermissionNames.SystemsManagePages_Administration_Roles, L("Roles"));
         }
 
         private static ILocalizableString L(string name)

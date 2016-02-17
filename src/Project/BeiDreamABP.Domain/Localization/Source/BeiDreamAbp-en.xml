@@ -3,7 +3,12 @@
 <localizationDictionary culture="en">
   <texts>
     <text name="WebSiteDescription" value="Welcome to BeiDream management system Demo" />
+    <text name="Home" value="Home" />
     <text name="About" value="About" />
+    <text name="Administration" value="Administration" />
+    <text name="Tenants" value="Tenants" />
+    <text name="Users" value="Users" />
+    <text name="Roles" value="Roles" />
     <text name="WellcomeMessage" value="Welcome to NewModuleZero!" />
     
     <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
@@ -28,7 +33,7 @@
     <text name="Surname" value="Surname" />
     <text name="EmailAddress" value="Email address" />
 
-    <text name="Tenants" value="Tenants" />
+
     <text name="SavedSuccessfully" value="Saved successfully" />
     <text name="CreateNewTenant" value="Create new tenant" />
     <text name="AdminEmailAddress" value="Admin email address" />

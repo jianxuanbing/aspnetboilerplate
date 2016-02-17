@@ -3,7 +3,12 @@
 <localizationDictionary culture="zh-CN">
   <texts>
     <text name="WebSiteDescription" value="欢迎光临BeiDream管理系统示例" />
+    <text name="Home" value="主页" />
     <text name="About" value="关于我们" />
+    <text name="Administration" value="权限管理" />
+    <text name="Tenants" value="租户管理" />
+    <text name="Users" value="用户管理" />
+    <text name="Roles" value="角色管理" />
     <text name="WellcomeMessage" value="欢迎使用 NewModuleZero!" />
     
     <text name="FormIsNotValidMessage" value="部分输入信息不符合要求，请检查并改正.." />
