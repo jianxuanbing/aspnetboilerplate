@@ -141,13 +141,21 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="images\DefaultUser.jpg" />
+    <Content Include="Scripts\abp.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery.extend.js" />
     <Content Include="Scripts\jquery.tabs.js" />
     <Content Include="Scripts\layer.js" />
+    <Content Include="Scripts\libs\abp.blockUI.js" />
+    <Content Include="Scripts\libs\abp.jquery.js" />
+    <Content Include="Scripts\libs\abp.jtable.js" />
+    <Content Include="Scripts\libs\abp.spin.js" />
+    <Content Include="Scripts\libs\abp.sweet-alert.js" />
+    <Content Include="Scripts\libs\abp.toastr.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Account\Login.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
