@@ -12,14 +12,6 @@ namespace BeiDreamAbp.Presentation
             context.Manager.MainMenu
                 .AddItem(
                     new MenuItemDefinition(
-                        "About",
-                        L("About"),
-                        url: "/About",
-                        icon: "fa fa-info",
-                        requiresAuthentication: true
-                        )
-                ).AddItem(
-                    new MenuItemDefinition(
                         "Tenants",
                         L("Tenants"),
                         url: "/Tenants",
@@ -43,6 +35,15 @@ namespace BeiDreamAbp.Presentation
                         icon: "fa fa-music",
                         requiredPermissionName: PermissionNames.SystemsManagePages_Administration_Roles
                     ))
+                )
+                .AddItem(
+                    new MenuItemDefinition(
+                        "About",
+                        L("About"),
+                        url: "/About",
+                        icon: "fa fa-info",
+                        requiresAuthentication: true
+                        )
                 );
         }
         private static ILocalizableString L(string name)

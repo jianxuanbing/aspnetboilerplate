@@ -155,7 +155,7 @@
     <Content Include="Scripts\libs\abp.sweet-alert.js" />
     <Content Include="Scripts\libs\abp.toastr.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Views\Account\Login.js" />
+    <Content Include="Scripts\Project\Account\Login.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -239,7 +239,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Layout\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

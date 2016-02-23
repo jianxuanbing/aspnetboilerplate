@@ -60,7 +60,7 @@ namespace BeiDreamAbp.Presentation.Controllers
 
             if (string.IsNullOrWhiteSpace(returnUrl))
             {
-                returnUrl = Url.Action("Index", "Home");
+                returnUrl = Url.Action("Index", "Layout");
             }
 
             return Json(new MvcAjaxResponse { TargetUrl = returnUrl });
