@@ -32,7 +32,7 @@ namespace BeiDreamAbp.Presentation.Controllers
 
         public ActionResult Index()
         {
-            return View("_Layout");
+            return View();
         }
         public PartialViewResult Sidebar(string currentPageName = "")
         {

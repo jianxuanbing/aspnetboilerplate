@@ -1,7 +1,26 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
+﻿<!DOCTYPE html>
 
-<h2>租户管理</h2>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>租户管理</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div>
+        <h2>租户管理界面</h2>
+        <button type="button" id="AddTenant" class="btn btn-success">新增租户</button>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/Vendor/jquery-validation/js/jquery.validate.js"></script>
+    <script src="~/Scripts/underscore.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/abp.js"></script>
+    <script src="~/Scripts/Common/jquery-custom.js"></script>
+    <script src="~/Scripts/Common/ModalManager.js"></script>
+    <script src="~/Scripts/Project/Tenants/AddTenant.js"></script>
+</body>
+</html>
 
