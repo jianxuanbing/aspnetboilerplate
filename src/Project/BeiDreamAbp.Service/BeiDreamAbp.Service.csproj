@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authorization\Users\Profile\Dto\ChangePasswordInput.cs" />
+    <Compile Include="Authorization\Users\Profile\IProfileAppService.cs" />
+    <Compile Include="Authorization\Users\Profile\ProfileAppService.cs" />
     <Compile Include="BeiDreamAbpAppServiceBase.cs" />
     <Compile Include="BeiDreamAbpServiceModule.cs" />
     <Compile Include="DtoMappings.cs" />

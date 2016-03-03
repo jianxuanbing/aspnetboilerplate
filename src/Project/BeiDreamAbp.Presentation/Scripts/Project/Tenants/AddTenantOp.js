@@ -21,7 +21,9 @@
             _modalManager.setBusy(true);
             //获取表单数据
             var dd = _$form.serializeFormToObject();
-            alert(dd.CurrentPassword);
+
+            //todo:Save this Object Data
+
             //关闭模态窗
             _modalManager.close();
             //设置操作按钮可用

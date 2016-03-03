@@ -16,9 +16,9 @@ namespace BeiDreamAbp.Presentation.Controllers
         {
             return View();
         }
-        public PartialViewResult AddTenant()    
+        public PartialViewResult AddTenantModal()    
         {
-            return PartialView("_AddTenant");
+            return PartialView("_AddTenantModal");
         }
     }
 }

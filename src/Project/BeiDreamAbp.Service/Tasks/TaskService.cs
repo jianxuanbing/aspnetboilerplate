@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using Abp.Application.Services;
+using Abp.Authorization;
 using AutoMapper;
 using BeiDreamAbp.Domain.Tasks;
 using BeiDreamAbp.Service.Tasks.Dtos;
 
 namespace BeiDreamAbp.Service.Tasks
 {
-    public class TaskService : ApplicationService, ITaskService
+    [AbpAuthorize]
+    public class TaskService : BeiDreamAbpAppServiceBase, ITaskService
     {
         private readonly ITaskRepository _taskRepository;
 

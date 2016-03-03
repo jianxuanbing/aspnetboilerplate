@@ -10,7 +10,7 @@ namespace BeiDreamAbp.Domain.Authorization.Users
     {
         //public const string DefaultPassword = "123qwe";
 
-        //public const int MinPlainPasswordLength = 6;
+        public const int MinPlainPasswordLength = 6;
         /// <summary>
         /// 用户头像ID
         /// </summary>

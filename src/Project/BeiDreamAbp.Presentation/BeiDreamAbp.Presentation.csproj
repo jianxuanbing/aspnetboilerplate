@@ -157,6 +157,7 @@
     <Content Include="Scripts\libs\abp.toastr.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Project\Account\Login.js" />
+    <Content Include="Scripts\Project\Layout\Layout.js" />
     <Content Include="Scripts\Project\Tenants\AddTenant.js" />
     <Content Include="Scripts\Project\Tenants\AddTenantOp.js" />
     <Content Include="Scripts\underscore.js" />
@@ -288,6 +289,8 @@
     <Content Include="Scripts\Vendor\layer\skin\default\loading-2.gif" />
     <Content Include="Scripts\Vendor\layer\skin\layer.css" />
     <Content Include="Scripts\Vendor\layer\skin\layer.ext.css" />
+    <Content Include="Scripts\Vendor\spinjs\jquery.spin.js" />
+    <Content Include="Scripts\Vendor\spinjs\spin.js" />
     <Content Include="Scripts\Vendor\sweetalert\dist\sweetalert.css" />
     <Content Include="Scripts\Vendor\sweetalert\dist\sweetalert.min.js" />
     <Content Include="Web.config" />
@@ -313,6 +316,7 @@
     <Compile Include="Models\Home\LanguageSelectionViewModel.cs" />
     <Compile Include="Models\Home\SidebarViewModel.cs" />
     <Compile Include="Models\Home\UserMenuOrLoginLinkViewModel.cs" />
+    <Compile Include="Models\Profile\ChangePasswordViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\BeiDreamAbpWebViewPageBase.cs" />
   </ItemGroup>
@@ -330,8 +334,10 @@
     <Content Include="Views\Layout\_LanguageSelection.cshtml" />
     <Content Include="Views\Layout\_UserMenuOrLoginLink.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Tenants\_AddTenant.cshtml" />
+    <Content Include="Views\Tenants\_AddTenantModal.cshtml" />
     <Content Include="Scripts\Vendor\jquery-validation\README.md" />
+    <Content Include="Views\Profile\_ChangePasswordModal.cshtml" />
+    <Content Include="Views\Error\E404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
