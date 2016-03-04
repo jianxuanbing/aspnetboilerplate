@@ -29,7 +29,7 @@ namespace BeiDreamAbp.Presentation.Controllers
             return PartialView("_ChangePasswordModal");
         }
         [HttpPost]
-        //[DisableAuditing]
+        [DisableAuditing]
         public async Task<JsonResult> ChangePassword(ChangePasswordViewModel changePasswordViewModel)
         {
             await _profileAppService.ChangePassword(new ChangePasswordInput() {CurrentPassword = changePasswordViewModel.CurrentPassword,NewPassword= changePasswordViewModel.NewPassword });

@@ -1,32 +1,35 @@
-﻿<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-    <h4 class="modal-title">
-        <span>添加租户</span>
-    </h4>
+﻿<div id="AddTenantModal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title">
+            <span>添加租户</span>
+        </h4>
+    </div>
+
+    <div class="modal-body">
+        <form name="AddTenantForm">
+            <div class="form-group form-md-line-input form-md-floating-label">
+                <label>当前密码</label>
+                <input type="password" name="CurrentPassword" class="form-control" required maxlength="32">
+
+                <span class="help-block help-block-info">忘记密码？ <a href="/Mpa/Account/ForgotPassword">点击这里</a>.</span>
+            </div>
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <label>新密码</label>
+                <input id="ChangePasswordModal_Password" type="password" name="NewPassword" class="form-control" required maxlength="32" minlength="6">
+
+            </div>
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <label>新密码 (核对)</label>
+                <input type="password" name="NewPasswordRepeat" class="form-control" required maxlength="32" minlength="6" equalto="#ChangePasswordModal_Password">
+
+            </div>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn default close-button" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary save-button"><i class="fa fa-save"></i> <span>保存</span></button>
+    </div>
 </div>
 
-<div class="modal-body">
-    <form name="AddTenantForm">
-        <div class="form-group form-md-line-input form-md-floating-label">
-            <label>当前密码</label>
-            <input type="password" name="CurrentPassword" class="form-control" required maxlength="32">
-
-            <span class="help-block help-block-info">忘记密码？ <a href="/Mpa/Account/ForgotPassword">点击这里</a>.</span>
-        </div>
-        <div class="form-group form-md-line-input form-md-floating-label no-hint">
-            <label>新密码</label>
-            <input id="ChangePasswordModal_Password" type="password" name="NewPassword" class="form-control" required maxlength="32" minlength="6">
-
-        </div>
-        <div class="form-group form-md-line-input form-md-floating-label no-hint">
-            <label>新密码 (核对)</label>
-            <input type="password" name="NewPasswordRepeat" class="form-control" required maxlength="32" minlength="6" equalto="#ChangePasswordModal_Password">
-
-        </div>
-    </form>
-</div>
-
-<div class="modal-footer">
-    <button type="button" class="btn default close-button" data-dismiss="modal">取消</button>
-    <button type="button" class="btn btn-primary save-button"><i class="fa fa-save"></i> <span>保存</span></button>
-</div>

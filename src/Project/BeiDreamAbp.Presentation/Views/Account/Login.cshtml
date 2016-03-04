@@ -14,67 +14,85 @@
     <meta name="description" content="BeiDream">
     <meta name="author" content="BeiDream">
     <title>登陆</title>
+    <!--bootstrap样式文件-->
     <link href="~/Content/bootstrap.css" rel="stylesheet"/>
-    <link href="~/Scripts/Vendor/sweetalert/dist/sweetalert.css" rel="stylesheet" />
+    <!--sweetalert(弹出消息框)插件样式文件-->
+    <link href="~/Scripts/Vendor/sweetalert/dist/sweetalert.css" rel="stylesheet"/>
+    <!--jquery js文件-->
     <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <!--sweetalert(弹出消息框)插件js文件-->
     <script src="~/Scripts/Vendor/sweetalert/dist/sweetalert.min.js"></script>
-    @Html.IncludeScript("~/Scripts/abp.js")
-            @Html.IncludeScript("~/Scripts/libs/abp.jquery.js")
-     <script src="~/Scripts/Vendor/spinjs/spin.js"></script>
+    <!--blockui(阻止页面与用户多次交互)插件js文件-->
+    <script src="~/Scripts/Vendor/jquery-blockui/jquery.blockui.min.js"></script>
+    <!--spin(动画加载)插件js文件-->
+    <script src="~/Scripts/Vendor/spinjs/spin.js"></script>
     <script src="~/Scripts/Vendor/spinjs/jquery.spin.js"></script>
+    <!--abp通用js方法文件-->
+    @Html.IncludeScript("~/Scripts/abp.js")
+    <!--abp扩展的jquery插件方法文件(主要ajax的封装,实现了对后台抛出异常返回的数据进行友好展示)-->
+    @Html.IncludeScript("~/Scripts/libs/abp.jquery.js")
+
+
+    <!--abp对blockui插件的封装-->
+    <script src="~/Scripts/libs/abp.blockUI.js"></script>
+    <!--abp对spin插件的封装-->
     <script src="~/Scripts/libs/abp.spin.js"></script>
-        <script src="~/Scripts/libs/abp.sweet-alert.js"></script>
+    <!--abp对sweetalert插件的封装-->
+    <script src="~/Scripts/libs/abp.sweet-alert.js"></script>
+
     @Html.IncludeScript("~/Scripts/Project/Account/Login.js")
 </head>
 <body>
-    <div class="container">
-        <div id="LoginArea" class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <form class="form-horizontal  form-group-lg" action="@(Url.Action("Login", "Account"))?returnUrl=@ViewBag.ReturnUrl" method="POST">
-                    <div class="form-group has-success">
-                        <label class="col-md-3 control-label">租户名</label>
-                        <div class="col-md-9 input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                            <input type="text" class="form-control" id="TenancyName" name="TenancyName" placeholder="租户名">
+<div class="container">
+    <div id="LoginArea" class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form class="form-horizontal  form-group-lg" action="@(Url.Action("Login", "Account"))?returnUrl=@ViewBag.ReturnUrl" method="POST">
+                <div class="form-group has-success">
+                    <label class="col-md-3 control-label">租户名</label>
+                    <div class="col-md-9 input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                        <input type="text" class="form-control" id="TenancyName" name="TenancyName" placeholder="租户名">
+                    </div>
+                </div>
+                <div class="form-group has-success">
+                    <label class="col-md-3 control-label">用户名</label>
+                    <div class="col-md-9 input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                        <input type="text" class="form-control" id="EmailAddressInput" name="EmailAddressInput" placeholder="用户名">
+                    </div>
+                </div>
+                <div class="form-group has-feedback">
+                    <label class="col-md-3 control-label">密码</label>
+                    <div class="col-md-9 input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                        <input type="password" class="form-control" id="PasswordInput" name="PasswordInput" placeholder="密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-9">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="RememberMeInput" name="RememberMeInput" value="True"> 记住我
+                            </label>
                         </div>
                     </div>
-                    <div class="form-group has-success">
-                        <label class="col-md-3 control-label">用户名</label>
-                        <div class="col-md-9 input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                            <input type="text" class="form-control" id="EmailAddressInput" name="EmailAddressInput" placeholder="用户名">
-                        </div>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <label class="col-md-3 control-label">密码</label>
-                        <div class="col-md-9 input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-                            <input type="password" class="form-control" id="PasswordInput" name="PasswordInput" placeholder="密码">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-3 col-md-9">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" id="RememberMeInput" name="RememberMeInput" value="True"> 记住我
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3">
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
 
-                        </div>
-                        <div class="col-md-9">
-                            <button id="LoginButton" type="submit" class="btn btn-primary btn-lg btn-block">登陆</button>
-                        </div>
                     </div>
-                    <input id="ReturnUrlHash" type="hidden" name="returnUrlHash" />
-                </form>        
-            </div>
-            <div class="col-md-4"></div>
+                    <div class="col-md-9">
+                        <button id="LoginButton" type="submit" class="btn btn-primary btn-lg btn-block">登陆</button>
+                    </div>
+                </div>
+                <input id="ReturnUrlHash" type="hidden" name="returnUrlHash"/>
+            </form>
         </div>
+        <div class="col-md-4"></div>
     </div>
+</div>
+
 </body>
+
 </html>

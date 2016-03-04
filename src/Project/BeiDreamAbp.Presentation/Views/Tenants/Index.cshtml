@@ -2,10 +2,11 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <title>租户管理</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-
+    <!--sweetalert(弹出消息框)插件样式文件-->
+    <link href="~/Scripts/Vendor/sweetalert/dist/sweetalert.css" rel="stylesheet" />
 </head>
 <body>
     <div>
@@ -14,13 +15,35 @@
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <!--jquery 验证插件-->
     <script src="~/Scripts/Vendor/jquery-validation/js/jquery.validate.js"></script>
     <script src="~/Scripts/Vendor/jquery-validation/js/localization/messages_zh.js"></script>
-    <script src="~/Scripts/underscore.js"></script>
+    <!--提供了一整套函数式编程的实用功能-->
+    <script src="~/Scripts/Vendor/underscore/underscore.js"></script>
+    <!--sweetalert(弹出消息框)插件js文件-->
+    <script src="~/Scripts/Vendor/sweetalert/dist/sweetalert.min.js"></script>
+    <!--blockui(阻止页面与用户多次交互)插件js文件-->
+    <script src="~/Scripts/Vendor/jquery-blockui/jquery.blockui.min.js"></script>
+    <!--spin(动画加载)插件js文件-->
+    <script src="~/Scripts/Vendor/spinjs/spin.js"></script>
+    <script src="~/Scripts/Vendor/spinjs/jquery.spin.js"></script>
+    <!--bootstrap插件js方法文件-->
     <script src="~/Scripts/bootstrap.js"></script>
+    <!--abp通用js方法文件-->
     <script src="~/Scripts/abp.js"></script>
+        <!--abp扩展的jquery插件方法文件(主要ajax的封装,实现了对后台抛出异常返回的数据进行友好展示)-->
+    <script src="~/Scripts/libs/abp.jquery.js"></script>
+    <!--设置按钮不可以状态，以及获取form表单所有数据方法-->
     <script src="~/Scripts/Common/jquery-custom.js"></script>
+    <!--abp对blockui插件的封装-->
+    <script src="~/Scripts/libs/abp.blockUI.js"></script>
+    <!--abp对spin插件的封装-->
+    <script src="~/Scripts/libs/abp.spin.js"></script>
+    <!--abp对sweetalert插件的封装-->
+    <script src="~/Scripts/libs/abp.sweet-alert.js"></script>
+    <!--对bootstrap插件模态窗的js封装-->
     <script src="~/Scripts/Common/ModalManager.js"></script>
+
     <script src="~/Scripts/Project/Tenants/AddTenant.js"></script>
 </body>
 </html>

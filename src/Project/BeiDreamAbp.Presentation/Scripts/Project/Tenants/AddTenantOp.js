@@ -20,15 +20,24 @@
             //设置操作按钮不可用，防止重复提交等操作
             _modalManager.setBusy(true);
             //获取表单数据
-            var dd = _$form.serializeFormToObject();
+            var formDatas = _$form.serializeFormToObject();
 
             //todo:Save this Object Data
-
-            //关闭模态窗
-            _modalManager.close();
+            abp.ui.setBusy(
+                $('#AddTenantModal'),
+                abp.ajax({
+                    url: abp.appPath + 'Tenants/AddTenant',
+                    type: 'POST',
+                    data: JSON.stringify(formDatas),
+                    success: function (result, data) {
+                        abp.message.success(result);
+                        //关闭模态窗
+                        _modalManager.close();
+                    }
+                })
+            );
             //设置操作按钮可用
             _modalManager.setBusy(false);
-
         };
 
     };

@@ -160,7 +160,7 @@
     <Content Include="Scripts\Project\Layout\Layout.js" />
     <Content Include="Scripts\Project\Tenants\AddTenant.js" />
     <Content Include="Scripts\Project\Tenants\AddTenantOp.js" />
-    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\Vendor\jquery-blockui\jquery.blockui.min.js" />
     <Content Include="Scripts\Vendor\jquery-validation\js\additional-methods.js" />
     <Content Include="Scripts\Vendor\jquery-validation\js\additional-methods.min.js" />
     <Content Include="Scripts\Vendor\jquery-validation\js\jquery.validate.js" />
@@ -293,6 +293,8 @@
     <Content Include="Scripts\Vendor\spinjs\spin.js" />
     <Content Include="Scripts\Vendor\sweetalert\dist\sweetalert.css" />
     <Content Include="Scripts\Vendor\sweetalert\dist\sweetalert.min.js" />
+    <Content Include="Scripts\Vendor\underscore\underscore.js" />
+    <Content Include="Scripts\Vendor\underscore\underscore.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
