@@ -22,6 +22,8 @@ namespace BeiDreamAbp.Domain.Authorization
             var users = administration.CreateChildPermission(PermissionNames.SystemsManagePages_Administration_Users, L("Users"));
             //角色管理
             var roles = administration.CreateChildPermission(PermissionNames.SystemsManagePages_Administration_Roles, L("Roles"));
+            //多语言管理
+            var languages = administration.CreateChildPermission(PermissionNames.SystemsManagePages_Administration_Languages, L("Languages"));
         }
 
         private static ILocalizableString L(string name)

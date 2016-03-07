@@ -34,6 +34,12 @@ namespace BeiDreamAbp.Presentation
                         url: "/Roles",
                         icon: "fa fa-music",
                         requiredPermissionName: PermissionNames.SystemsManagePages_Administration_Roles
+                    )).AddItem(new MenuItemDefinition(
+                        "Languages",
+                        L("Languages"),
+                        url: "/Languages",
+                        icon: "fa fa-music",
+                        requiredPermissionName: PermissionNames.SystemsManagePages_Administration_Languages
                     ))
                 )
                 .AddItem(

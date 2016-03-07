@@ -16,11 +16,12 @@
 
         public const string SystemsManagePages_Administration_Users = "SystemsManagePages.Administration.Users";
         public const string SystemsManagePages_Administration_Roles = "SystemsManagePages.Administration.Roles";
+        public const string SystemsManagePages_Administration_Languages = "SystemsManagePages.Administration.Languages";
 
         //系统管理页说明.登录即可访问
         //public const string SystemsManagePages_About = "SystemsManagePages.About";
 
 
-        
+
     }
 }

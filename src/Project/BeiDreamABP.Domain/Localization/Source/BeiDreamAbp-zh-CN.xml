@@ -9,7 +9,7 @@
     <text name="Tenants" value="租户管理" />
     <text name="Users" value="用户管理" />
     <text name="Roles" value="角色管理" />
-    <text name="WellcomeMessage" value="欢迎使用 NewModuleZero!" />
+    <text name="Languages" value="多语言管理" />
     
     <text name="FormIsNotValidMessage" value="部分输入信息不符合要求，请检查并改正.." />
     <text name="TenantNameCanNotBeEmpty" value="租户名不能为空" />

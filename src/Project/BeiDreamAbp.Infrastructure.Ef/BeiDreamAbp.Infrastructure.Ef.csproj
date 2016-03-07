@@ -74,9 +74,9 @@
     <Compile Include="EntityFramework\BeiDreamAbpDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\BeiDreamAbpRepositoryBase.cs" />
     <Compile Include="EntityFramework\Repositories\TaskRepository.cs" />
-    <Compile Include="Migrations\201601301012503_InitialCreate.cs" />
-    <Compile Include="Migrations\201601301012503_InitialCreate.Designer.cs">
-      <DependentUpon>201601301012503_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201603070725072_InitialCreate.cs" />
+    <Compile Include="Migrations\201603070725072_InitialCreate.Designer.cs">
+      <DependentUpon>201603070725072_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\SeedData\DefaultEditionBuilder.cs" />
@@ -117,8 +117,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601301012503_InitialCreate.resx">
-      <DependentUpon>201601301012503_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201603070725072_InitialCreate.resx">
+      <DependentUpon>201603070725072_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
