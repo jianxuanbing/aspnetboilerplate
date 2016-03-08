@@ -1,7 +1,8 @@
 ﻿(function ($) {         //传入参数$，保证内部使用的$,是JQuery变量
 
     //文档加载完毕立即执行的js代码(例如初始化代码)
-    $(function() {
+    $(function () {
+        moment.locale('zh-CN');    //设置当前语言环境为中文
         LanguagesTable.tableInit();
         LanguagesButtons.buttonsInit();
     });
@@ -58,12 +59,21 @@ var LanguagesTable = function () {
                     title: '名称'
                 }, {
                     field: 'CreationTime',
-                    title: '创建时间'
+                    title: '创建时间',
+                    formatter: function (value) {
+                        return moment(value).format('LLL');
+                    }
                 }, {
                     field: 'Icon',
                     title: '图标',
                     formatter: function(value) {
                         return "<i class=" + value + "></i>";
+                    }
+                }, {
+                    field: 'Id',
+                    title: '操作',
+                    formatter: function (value) {
+                        return "<div class='btn-group'><button id='btnEditText' onclick=LanguagesButtons.editText("+value+") type='button' class='btn btn-success' aria-label='Justify' title='修改文本'><span class='glyphicon glyphicon-align-justify' aria-hidden='true'></span></button></div>";
                     }
                 }]
             });
@@ -73,8 +83,8 @@ var LanguagesTable = function () {
 var LanguagesButtons = function () {
 
     var createOrEditModal = new app.ModalManager({
-        viewUrl: abp.appPath + 'Mpa/Languages/CreateOrEditModal',
-        scriptUrl: abp.appPath + 'Areas/Mpa/Views/Languages/_CreateOrEditModal.js',
+        viewUrl: abp.appPath + 'Languages/CreateOrEditModal',
+        scriptUrl: abp.appPath + 'Scripts/Project/Languages/CreateOrEditModal.js',
         modalClass: 'CreateOrEditLanguageModal'
     });
 
@@ -97,7 +107,7 @@ var LanguagesButtons = function () {
                 abp.notify.warn('请选择一行数据！');
                 return;
             }
-            createOrEditModal.open(arrselections[0].DEPARTMENT_ID);
+            createOrEditModal.open({ id: arrselections[0].Id });
         });
     };
 
@@ -125,6 +135,9 @@ var LanguagesButtons = function () {
             addButtonInit();
             editButtonInit();
             deleteButtonInit();
+        },
+        editText: function (id) {
+            abp.message.success("修改文本成功"+id);
         }
     };
 }();

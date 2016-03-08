@@ -61,8 +61,11 @@
     <Compile Include="BeiDreamAbpAppServiceBase.cs" />
     <Compile Include="BeiDreamAbpServiceModule.cs" />
     <Compile Include="DtoMappings.cs" />
+    <Compile Include="Localization\Dto\ApplicationLanguageEditDto.cs" />
     <Compile Include="Localization\Dto\ApplicationLanguageListDto.cs" />
+    <Compile Include="Localization\Dto\GetLanguageForEditOutput.cs" />
     <Compile Include="Localization\Dto\GetLanguagesOutput.cs" />
+    <Compile Include="Localization\FamFamFamFlagsHelper.cs" />
     <Compile Include="Localization\LanguageAppService.cs" />
     <Compile Include="Localization\ILanguageAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

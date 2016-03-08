@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Abp.Application.Services.Dto;
 using Abp.Web.Models;
 using Abp.Web.Mvc.Authorization;
 using BeiDreamAbp.Domain.Authorization;
+using BeiDreamAbp.Presentation.Models.Languages;
 using BeiDreamAbp.Service.Localization;
 
 namespace BeiDreamAbp.Presentation.Controllers
@@ -43,6 +45,13 @@ namespace BeiDreamAbp.Presentation.Controllers
             var total = languages.Items.Count;
             var rows = languages.Items.Skip(offset).Take(limit).Where(p => p.Name.Contains(name) && p.DisplayName.Contains(displayName)).ToList();
             return Json(new { total = total, rows = rows }, JsonRequestBehavior.AllowGet);
+        }
+        public async Task<PartialViewResult> CreateOrEditModal(int? id)
+        {
+            var output = await _languageAppService.GetLanguageForEdit(new NullableIdInput { Id = id });
+            var viewModel = new CreateOrEditLanguageModalViewModel(output);
+
+            return PartialView("_CreateOrEditModal", viewModel);
         }
     }
     public class Department
