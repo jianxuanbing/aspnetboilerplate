@@ -4,7 +4,7 @@
         return;
     }
 
-    /* DEFAULTS *************************************************/
+    /* DEFAULTS暂时全部修改本地化中文 *************************************************/
 
     abp.libs = abp.libs || {};
     abp.libs.sweetAlert = {
@@ -26,11 +26,11 @@
             },
             confirm: {
                 type: 'warning',
-                title: 'Are you sure?',
+                title: '你确定吗?',    //by Edit BeiDream
                 showCancelButton: true,
-                cancelButtonText: 'Cancel',
+                cancelButtonText: '取消',    //by Edit BeiDream
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: 'Yes'
+                confirmButtonText: '确定'   //by Edit BeiDream
             }
         }
     };
@@ -49,6 +49,7 @@
             abp.libs.sweetAlert.config[type],
             {
                 title: title,
+                confirmButtonText: '确定',  //by Add BeiDream
                 text: message
             }
         );
@@ -101,7 +102,7 @@
             });
         });
     };
-
+    //abp封装的动态事件,还没研究(此方法的功能是设置sweetAlert的语言本地化)
     abp.event.on('abp.dynamicScriptsInitialized', function () {
         abp.libs.sweetAlert.config.confirm.title = abp.localization.abpWeb('AreYouSure');
         abp.libs.sweetAlert.config.confirm.cancelButtonText = abp.localization.abpWeb('Cancel');

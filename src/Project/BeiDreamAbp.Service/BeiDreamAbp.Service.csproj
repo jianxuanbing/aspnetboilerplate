@@ -61,6 +61,10 @@
     <Compile Include="BeiDreamAbpAppServiceBase.cs" />
     <Compile Include="BeiDreamAbpServiceModule.cs" />
     <Compile Include="DtoMappings.cs" />
+    <Compile Include="Localization\Dto\ApplicationLanguageListDto.cs" />
+    <Compile Include="Localization\Dto\GetLanguagesOutput.cs" />
+    <Compile Include="Localization\LanguageAppService.cs" />
+    <Compile Include="Localization\ILanguageAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Dto\GetCurrentLoginInformationsOutput.cs" />
     <Compile Include="Security\Dto\TenantLoginInfoDto.cs" />
