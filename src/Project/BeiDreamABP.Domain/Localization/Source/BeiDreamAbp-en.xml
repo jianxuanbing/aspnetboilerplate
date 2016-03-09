@@ -10,7 +10,10 @@
     <text name="Users" value="Users" />
     <text name="Roles" value="Roles" />
     <text name="Languages" value="Languages" />
-    
+
+    <text name="Language" value="Language" />
+    <text name="Flag" value="Flag" />
+
     <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
     <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
 

@@ -1,0 +1,14 @@
+﻿前端：
+1.前台js模块化,使用requirejs进行加载，解决依赖关系管理，冲突等(待实现)
+2.js端的多语言自动切换，app.localize('SavedSuccessfully')  (待实现)
+
+
+
+后端：
+1.webapi动态代理,前台直接js方式引用(待理解)
+2.领域事件(待理解)
+3.数据过滤器的动态开启和关闭实现 _unitOfWorkManager.Current.DisableFilter(AbpDataFilters.SoftDelete), 同时关闭多个数据过滤器功能实现(待理解)
+4.版本号实现原理(待理解)
+
+
+5.应用服务层里,多语言服务类里的日志功能待实现(稍后处理)

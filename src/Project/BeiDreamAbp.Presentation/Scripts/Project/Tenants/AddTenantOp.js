@@ -22,7 +22,6 @@
             //获取表单数据
             var formDatas = _$form.serializeFormToObject();
 
-            //todo:Save this Object Data
             abp.ui.setBusy(
                 $('#AddTenantModal'),
                 abp.ajax({

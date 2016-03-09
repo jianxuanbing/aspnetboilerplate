@@ -1,10 +1,6 @@
-﻿<div id="AddTenantModal">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-        <h4 class="modal-title">
-            <span>添加租户</span>
-        </h4>
-    </div>
+﻿@using BeiDreamAbp.Presentation.Models.Common.Modals
+<div id="AddTenantModal">
+@Html.Partial("~/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel("添加租户"))
 
     <div class="modal-body">
         <form name="AddTenantForm">

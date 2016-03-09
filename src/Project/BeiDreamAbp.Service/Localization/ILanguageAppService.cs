@@ -9,5 +9,8 @@ namespace BeiDreamAbp.Service.Localization
     {
         Task<GetLanguagesOutput> GetLanguages();
         Task<GetLanguageForEditOutput> GetLanguageForEdit(NullableIdInput input);
+        Task CreateOrUpdateLanguage(CreateOrUpdateLanguageInput input);
+        Task DeleteLanguage(IdInput input);
+        Task SetDefaultLanguage(IdInput input);
     }
 }

@@ -5,6 +5,10 @@
         moment.locale('zh-CN');    //设置当前语言环境为中文
         LanguagesTable.tableInit();
         LanguagesButtons.buttonsInit();
+        //注册创建或修改完语言保存之后的事件(事件为:重新加载语言表格数据);
+        abp.event.on('app.createOrEditLanguageModalSaved', function () {
+            LanguagesTable.tableRefresh();
+        });
     });
 
 })(jQuery);
@@ -73,13 +77,20 @@ var LanguagesTable = function () {
                     field: 'Id',
                     title: '操作',
                     formatter: function (value) {
-                        return "<div class='btn-group'><button id='btnEditText' onclick=LanguagesButtons.editText("+value+") type='button' class='btn btn-success' aria-label='Justify' title='修改文本'><span class='glyphicon glyphicon-align-justify' aria-hidden='true'></span></button></div>";
+                        return "<div class='btn-group'>" +
+                            "<button id='btnEditText' onclick=LanguagesButtons.editText(" + value + ") type='button' class='btn btn-success' aria-label='Justify' title='修改文本'><span class='glyphicon glyphicon-align-justify' aria-hidden='true'></span></button>" +
+                            "<button type='button' onclick=LanguagesButtons.setDefault(" + value + ") class='btn btn-warning' aria-label='Center Align' title='设置为默认语言'><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></button>" +
+                            "</div>";
                     }
                 }]
             });
-        }
+        },
+        tableRefresh:function() {
+            $("#tb_departments").bootstrapTable('refresh');
+        } 
     };
 }();
+
 var LanguagesButtons = function () {
 
     var createOrEditModal = new app.ModalManager({
@@ -122,7 +133,17 @@ var LanguagesButtons = function () {
                 "删除后数据不能恢复","确定删除吗?",
                 function (isConfirmed) {
                     if (isConfirmed) {
-                        abp.notify.success("删除成功");
+                        abp.ajax({
+                            url: abp.appPath + 'Languages/DeleteLanguage',
+                            type: 'POST',
+                            data: JSON.stringify({
+                                id: arrselections[0].Id
+                            }),
+                            success: function(result, data) {
+                                abp.notify.success(result);
+                                LanguagesTable.tableRefresh();
+                            }
+                        });
                     }
                 }
             );
@@ -138,6 +159,19 @@ var LanguagesButtons = function () {
         },
         editText: function (id) {
             abp.message.success("修改文本成功"+id);
+        },
+        setDefault: function (id) {
+            abp.ajax({
+                url: abp.appPath + 'Languages/SetDefaultLanguage',
+                type: 'POST',
+                data: JSON.stringify({
+                    id: id
+                }),
+                success: function (result, data) {
+                    abp.notify.success(result);
+                    LanguagesTable.tableRefresh();
+                }
+            });
         }
     };
 }();

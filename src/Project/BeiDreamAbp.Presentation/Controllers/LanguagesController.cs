@@ -7,9 +7,11 @@ using System.Web.Mvc;
 using Abp.Application.Services.Dto;
 using Abp.Web.Models;
 using Abp.Web.Mvc.Authorization;
+using Abp.Web.Mvc.Models;
 using BeiDreamAbp.Domain.Authorization;
 using BeiDreamAbp.Presentation.Models.Languages;
 using BeiDreamAbp.Service.Localization;
+using BeiDreamAbp.Service.Localization.Dto;
 
 namespace BeiDreamAbp.Presentation.Controllers
 {
@@ -31,16 +33,6 @@ namespace BeiDreamAbp.Presentation.Controllers
         [WrapResult(false)]   //添加此标注，则返回未经过封装的json数据
         public async Task<JsonResult> GetLanguages(int limit, int offset, string name, string displayName)
         {
-            //var lstRes = new List<Department>();
-            //for (var i = 0; i < 50; i++)
-            //{
-            //    var oModel = new Department();
-            //    oModel.ID = Guid.NewGuid().ToString();
-            //    oModel.Name = "销售部" + i;
-            //    oModel.Level = i.ToString();
-            //    oModel.Desc = "暂无描述信息";
-            //    lstRes.Add(oModel);
-            //}
             var languages = await _languageAppService.GetLanguages();
             var total = languages.Items.Count;
             var rows = languages.Items.Skip(offset).Take(limit).Where(p => p.Name.Contains(name) && p.DisplayName.Contains(displayName)).ToList();
@@ -53,17 +45,24 @@ namespace BeiDreamAbp.Presentation.Controllers
 
             return PartialView("_CreateOrEditModal", viewModel);
         }
-    }
-    public class Department
-    {
-        public string ID { set; get; }
-
-        public string Name { set; get; }
-
-        public string ParentName { set; get; }
-
-        public string Level { set; get; }
-
-        public string Desc { set; get; }
+        [HttpPost]
+        public async Task<JsonResult> CreateOrUpdateLanguage(CreateOrUpdateLanguageInput createOrUpdateLanguageInput)
+        {
+            await _languageAppService.CreateOrUpdateLanguage(createOrUpdateLanguageInput);
+            return Json(new MvcAjaxResponse { Result = "操作成功!" });
+        }
+        [HttpPost]
+        public async Task<JsonResult> DeleteLanguage(IdInput input)
+        {
+            //todo 实现关闭软删除功能，直接数据库删除掉数据(本身已关闭多租户过滤器，如何同时关闭软删除过滤器？)
+            await _languageAppService.DeleteLanguage(input);
+            return Json(new MvcAjaxResponse { Result = "删除成功!" });
+        }
+        [HttpPost]
+        public async Task<JsonResult> SetDefaultLanguage(IdInput input)
+        {
+            await _languageAppService.SetDefaultLanguage(input);
+            return Json(new MvcAjaxResponse { Result = "设置成功!" });
+        }
     }
 }

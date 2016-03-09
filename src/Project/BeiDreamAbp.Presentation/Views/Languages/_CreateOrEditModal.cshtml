@@ -1,34 +1,38 @@
-﻿<div id="AddTenantModal">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-        <h4 class="modal-title">
-            <span>添加租户</span>
-        </h4>
-    </div>
+﻿@using Abp.Application.Services.Dto
+@using BeiDreamAbp.Presentation.Models.Common.Modals
+@model BeiDreamAbp.Presentation.Models.Languages.CreateOrEditLanguageModalViewModel
+<div id="CreateOrEditLanguageModal">
+    @Html.Partial("~/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? ("编辑语言" + ": " + Model.Language.Name) : "创建语言"))
 
     <div class="modal-body">
-        <form name="AddTenantForm">
-            <div class="form-group form-md-line-input form-md-floating-label">
-                <label>当前密码</label>
-                <input type="password" name="CurrentPassword" class="form-control" required maxlength="32">
-
-                <span class="help-block help-block-info">忘记密码？ <a href="/Mpa/Account/ForgotPassword">点击这里</a>.</span>
+        <form name="LanguageInformationsForm" role="form" novalidate class="form-validation">
+            @if (Model.IsEditMode)
+            {
+                <input type="hidden" name="Id" value="@Model.Language.Id" />
+            }
+            <div class="form-group">
+                <label for="LanguageNameEdit">@L("Language")</label>
+                @Html.DropDownList(
+                "Name",
+                Model.LanguageNames.Select(i => i.ToSelectListItem()),
+                new
+                {
+                    @class = "form-control selectpicker",
+                    data_live_search = "true",
+                    id = "LanguageNameEdit"
+                })
             </div>
-            <div class="form-group form-md-line-input form-md-floating-label no-hint">
-                <label>新密码</label>
-                <input id="ChangePasswordModal_Password" type="password" name="NewPassword" class="form-control" required maxlength="32" minlength="6">
-
-            </div>
-            <div class="form-group form-md-line-input form-md-floating-label no-hint">
-                <label>新密码 (核对)</label>
-                <input type="password" name="NewPasswordRepeat" class="form-control" required maxlength="32" minlength="6" equalto="#ChangePasswordModal_Password">
-
+            <div class="form-group">
+                <label for="LanguageIconEdit">@L("Flag")</label>
+                <select id="LanguageIconEdit" name="Icon" class="form-control bs-select" data-live-search="true">
+                    @foreach (var flag in Model.Flags)
+                    {
+                        <option data-icon="@flag.Value" value="@flag.Value" @(flag.IsSelected ? "selected=\"selected\"" : "")><i class="@flag.Value"></i>@flag.DisplayText</option>
+                    }
+                </select>
             </div>
         </form>
     </div>
 
-    <div class="modal-footer">
-        <button type="button" class="btn default close-button" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary save-button"><i class="fa fa-save"></i> <span>保存</span></button>
-    </div>
+    @Html.Partial("~/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")
 </div>

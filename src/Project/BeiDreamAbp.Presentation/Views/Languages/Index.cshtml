@@ -8,9 +8,11 @@
 <head>
     <title>多语言管理</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet"/>
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
     <!--国旗图标集合样式文件-->
     <link href="~/Content/flags/famfamfam-flags.css" rel="stylesheet" />
     <link href="~/Scripts/Vendor/bootstrap-table/dist/bootstrap-table.css" rel="stylesheet"/>
+    <link href="~/Scripts/Vendor/bootstrap-select/bootstrap-select.css" rel="stylesheet" />
     <!--sweetalert(弹出消息框)插件样式文件-->
     <link href="~/Scripts/Vendor/sweetalert/dist/sweetalert.css" rel="stylesheet" />
     <link href="~/Scripts/Vendor/toastr/toastr.css" rel="stylesheet" />
@@ -56,6 +58,8 @@
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/Vendor/bootstrap-table/dist/bootstrap-table.js"></script>
     <script src="~/Scripts/Vendor/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
+    <script src="~/Scripts/Vendor/bootstrap-select/bootstrap-select.js"></script>
+    <script src="~/Scripts/Vendor/bootstrap-select/i18n/defaults-zh_CN.js"></script>
     <!--提供了一整套函数式编程的实用功能-->
     <script src="~/Scripts/Vendor/underscore/underscore.js"></script>
     <!--sweetalert(弹出消息框)插件js文件-->
@@ -64,12 +68,23 @@
     <script src="~/Scripts/Vendor/toastr/toastr.js"></script>
     <!--JavaScript 日期处理js类库-->   
     <script src="~/Scripts/Vendor/moment/moment.min.js"></script>
-    <!--JavaScript 日期处理js类库的本地化插件-->   
+    <!--JavaScript 日期处理js类库的本地化插件-->
     <script src="~/Scripts/Vendor/moment/moment-with-locales.min.js"></script>
+    <!--blockui(阻止页面与用户多次交互)插件js文件-->
+    <script src="~/Scripts/Vendor/jquery-blockui/jquery.blockui.min.js"></script>
+    <!--spin(动画加载)插件js文件-->
+    <script src="~/Scripts/Vendor/spinjs/spin.js"></script>
+    <script src="~/Scripts/Vendor/spinjs/jquery.spin.js"></script>
     <!--abp通用js方法文件-->
     <script src="~/Scripts/abp.js"></script>
     <!--abp扩展的jquery插件方法文件(主要ajax的封装,实现了对后台抛出异常返回的数据进行友好展示)-->
     <script src="~/Scripts/libs/abp.jquery.js"></script>
+    <!--设置按钮不可以状态，以及获取form表单所有数据方法-->
+    <script src="~/Scripts/Common/jquery-custom.js"></script>
+    <!--abp对blockui插件的封装-->
+    <script src="~/Scripts/libs/abp.blockUI.js"></script>
+    <!--abp对spin插件的封装-->
+    <script src="~/Scripts/libs/abp.spin.js"></script>
     <!--abp对sweetalert插件的封装-->
     <script src="~/Scripts/libs/abp.sweet-alert.js"></script>
     <!--abp对toastr插件的封装-->

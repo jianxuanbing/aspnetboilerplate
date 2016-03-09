@@ -63,6 +63,7 @@
     <Compile Include="DtoMappings.cs" />
     <Compile Include="Localization\Dto\ApplicationLanguageEditDto.cs" />
     <Compile Include="Localization\Dto\ApplicationLanguageListDto.cs" />
+    <Compile Include="Localization\Dto\CreateOrUpdateLanguageInput.cs" />
     <Compile Include="Localization\Dto\GetLanguageForEditOutput.cs" />
     <Compile Include="Localization\Dto\GetLanguagesOutput.cs" />
     <Compile Include="Localization\FamFamFamFlagsHelper.cs" />
