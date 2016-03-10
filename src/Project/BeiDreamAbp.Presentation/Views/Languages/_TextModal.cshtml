@@ -1,0 +1,79 @@
+﻿@using BeiDreamAbp.Presentation.Models.Common.Modals
+@model BeiDreamAbp.Presentation.Models.Languages.LanguageTextsViewModel
+@Html.Partial("~/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel("语言文本信息"))
+
+<div class="panel-body" style="padding-bottom: 0;">
+    <div class="panel panel-default">
+        <div class="panel-heading">查询条件</div>
+        <div class="panel-body">
+            <form id="TextsFilterForm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="form-group">
+                            <label for="TextBaseLanguageSelectionCombobox">@L("BaseLanguage")</label>
+                            <select id="TextBaseLanguageSelectionCombobox"
+                                    class="form-control bs-select"
+                                    data-live-search="true">
+                                @foreach (var language in Model.Languages)
+                                {
+                                    <option data-icon="@language.Icon" value="@language.Name" @(language.Name == Model.BaseLanguageName ? "selected=\"selected\"" : "")>
+                                        <i class="@language.Icon"></i>@language.DisplayName
+                                    </option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="form-group">
+                            <label for="TextTargetLanguageSelectionCombobox">@L("TargetLanguage")</label>
+                            <select id="TextTargetLanguageSelectionCombobox"
+                                    class="form-control bs-select"
+                                    data-live-search="true">
+                                @foreach (var language in Model.Languages)
+                                {
+                                    <option data-icon="@language.Icon" value="@language.Name" @(language.Name == Model.LanguageName ? "selected=\"selected\"" : "")>
+                                        <i class="@language.Icon"></i>@language.DisplayName
+                                    </option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="form-group">
+                            <label for="TextSourceSelectionCombobox">@L("Source")</label>
+                            @Html.DropDownList(
+                                "SourceName",
+                                Model.Sources,
+                                new
+                                {
+                                    @class = "form-control selectpicker",
+                                    data_live_search = "true",
+                                    id = "TextSourceSelectionCombobox"
+                                })
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="form-group">
+                            <label for="TargetValueFilterSelectionCombobox">@L("TargetValue")</label>
+                            <select id="TargetValueFilterSelectionCombobox" class="form-control bs-select">
+                                <option value="ALL" @(Model.TargetValueFilter == "ALL" ? "selected=\"selected\"" : "")>@L("All")</option>
+                                <option value="EMPTY" @(Model.TargetValueFilter == "EMPTY" ? "selected=\"selected\"" : "")>@L("EmptyOnes")</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input id="TextFilter" value="@Model.FilterText" class="form-control" placeholder="@L("SearchWithThreeDot")" type="text">
+                    <span class="input-group-btn">
+                        <button id="RefreshTextsButton" class="btn default" type="submit"><i class="icon-refresh"></i> @L("Refresh")</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table id="tb_LanguageTexts" data-reorderable-columns="true"></table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> <span>@L("Close")</span></button>
+</div>

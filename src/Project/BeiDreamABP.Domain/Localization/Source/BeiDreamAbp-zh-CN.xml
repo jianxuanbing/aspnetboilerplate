@@ -13,6 +13,16 @@
 
     <text name="Save" value="保存" />
     <text name="Cancel" value="取消" />
+    <text name="Close" value="关闭" />
+    <text name="BaseLanguage" value="默认语言" />
+    <text name="TargetLanguage" value="目标语言" />
+    <text name="EmptyOnes" value="空值" />
+    <text name="Source" value="选择源" />
+    <text name="All" value="全部" />
+    <text name="TargetValue" value="目标值" />
+    <text name="BaseValue" value="默认值" />
+    <text name="Key" value="键值" />
+    <text name="Refresh" value="搜索" />
 
     <text name="Language" value="语言" />
     <text name="Flag" value="标记" />

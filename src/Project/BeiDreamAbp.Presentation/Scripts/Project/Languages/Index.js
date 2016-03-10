@@ -49,7 +49,7 @@ var LanguagesTable = function () {
                 minimumCountColumns: 2,             //最少允许的列数
                 clickToSelect: true,                //是否启用点击选中行
                 height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-                uniqueId: "ID",                     //每一行的唯一标识，一般为主键列
+                uniqueId: "Id",                     //每一行的唯一标识，一般为主键列
                 showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
                 cardView: false,                    //是否显示详细视图
                 detailView: false,                   //是否显示父子表
@@ -78,7 +78,7 @@ var LanguagesTable = function () {
                     title: '操作',
                     formatter: function (value) {
                         return "<div class='btn-group'>" +
-                            "<button id='btnEditText' onclick=LanguagesButtons.editText(" + value + ") type='button' class='btn btn-success' aria-label='Justify' title='修改文本'><span class='glyphicon glyphicon-align-justify' aria-hidden='true'></span></button>" +
+                            "<button onclick=LanguagesButtons.text(" + value + ") type='button' class='btn btn-success' aria-label='Justify' title='修改文本'><span class='glyphicon glyphicon-align-justify' aria-hidden='true'></span></button>" +
                             "<button type='button' onclick=LanguagesButtons.setDefault(" + value + ") class='btn btn-warning' aria-label='Center Align' title='设置为默认语言'><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></button>" +
                             "</div>";
                     }
@@ -97,6 +97,12 @@ var LanguagesButtons = function () {
         viewUrl: abp.appPath + 'Languages/CreateOrEditModal',
         scriptUrl: abp.appPath + 'Scripts/Project/Languages/CreateOrEditModal.js',
         modalClass: 'CreateOrEditLanguageModal'
+    });
+
+    var textModal = new app.ModalManager({
+        viewUrl: abp.appPath + 'Languages/TextModal',
+        scriptUrl: abp.appPath + 'Scripts/Project/Languages/TextModal.js',
+        modalClass: 'TextModal'
     });
 
     var queryButtonInit = function () {
@@ -157,8 +163,8 @@ var LanguagesButtons = function () {
             editButtonInit();
             deleteButtonInit();
         },
-        editText: function (id) {
-            abp.message.success("修改文本成功"+id);
+        text: function (id) {
+            textModal.open({ id: id });
         },
         setDefault: function (id) {
             abp.ajax({

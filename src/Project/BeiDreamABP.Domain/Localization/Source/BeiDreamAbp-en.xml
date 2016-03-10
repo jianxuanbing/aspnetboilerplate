@@ -13,6 +13,16 @@
 
     <text name="Language" value="Language" />
     <text name="Flag" value="Flag" />
+    <text name="Close" value="Close" />
+    <text name="BaseLanguage" value="BaseLanguage" />
+    <text name="TargetLanguage" value="TargetLanguage" />
+    <text name="EmptyOnes" value="EmptyOnes" />
+    <text name="Source" value="Source" />
+    <text name="All" value="All" />
+    <text name="TargetValue" value="TargetValue" />
+    <text name="BaseValue" value="BaseValue" />
+    <text name="Key" value="Key" />
+    <text name="Refresh" value="Search" />
 
     <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
     <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />

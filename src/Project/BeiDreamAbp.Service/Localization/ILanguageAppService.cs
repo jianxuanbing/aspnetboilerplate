@@ -12,5 +12,7 @@ namespace BeiDreamAbp.Service.Localization
         Task CreateOrUpdateLanguage(CreateOrUpdateLanguageInput input);
         Task DeleteLanguage(IdInput input);
         Task SetDefaultLanguage(IdInput input);
+        Task<PagedResultOutput<LanguageTextListDto>> GetLanguageTexts(GetLanguageTextsInput input);
+        Task UpdateLanguageText(UpdateLanguageTextInput input);
     }
 }

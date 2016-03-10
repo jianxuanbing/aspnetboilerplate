@@ -164,7 +164,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Project\Account\Login.js" />
     <Content Include="Scripts\Project\Languages\CreateOrEditModal.js" />
+    <Content Include="Scripts\Project\Languages\EditTextModal.js" />
     <Content Include="Scripts\Project\Languages\Index.js" />
+    <Content Include="Scripts\Project\Languages\TextModal.js" />
     <Content Include="Scripts\Project\Layout\Layout.js" />
     <Content Include="Scripts\Project\Tenants\AddTenant.js" />
     <Content Include="Scripts\Project\Tenants\AddTenantOp.js" />
@@ -535,6 +537,8 @@
     <Compile Include="Models\Home\SidebarViewModel.cs" />
     <Compile Include="Models\Home\UserMenuOrLoginLinkViewModel.cs" />
     <Compile Include="Models\Languages\CreateOrEditLanguageModalViewModel.cs" />
+    <Compile Include="Models\Languages\EditTextModalViewModel.cs" />
+    <Compile Include="Models\Languages\LanguageTextsViewModel.cs" />
     <Compile Include="Models\Profile\ChangePasswordViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\BeiDreamAbpWebViewPageBase.cs" />
@@ -572,6 +576,8 @@
     <Content Include="Scripts\Vendor\bootstrap-select\README.md" />
     <None Include="Views\Languages\Index.cshtml" />
     <Content Include="Views\Languages\_CreateOrEditModal.cshtml" />
+    <Content Include="Views\Languages\_TextModal.cshtml" />
+    <Content Include="Views\Languages\_EditTextModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

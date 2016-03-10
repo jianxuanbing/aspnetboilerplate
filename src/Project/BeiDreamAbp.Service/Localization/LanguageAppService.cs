@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
+using System.Linq.Dynamic;
 using Abp.Authorization;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
+using Abp.Extensions;
 using Abp.Localization;
 using Abp.UI;
 using BeiDreamAbp.Domain.Authorization;
@@ -18,12 +21,14 @@ namespace BeiDreamAbp.Service.Localization
     public class LanguageAppService : BeiDreamAbpAppServiceBase, ILanguageAppService
     {
         private readonly IApplicationLanguageManager _applicationLanguageManager;
+        private readonly IApplicationLanguageTextManager _applicationLanguageTextManager;
         private readonly IRepository<ApplicationLanguage> _languageRepository;
 
-        public LanguageAppService(IApplicationLanguageManager applicationLanguageManager, IRepository<ApplicationLanguage> languageRepository)
+        public LanguageAppService(IApplicationLanguageManager applicationLanguageManager, IRepository<ApplicationLanguage> languageRepository, IApplicationLanguageTextManager applicationLanguageTextManager)
         {
             _applicationLanguageManager = applicationLanguageManager;
             _languageRepository = languageRepository;
+            _applicationLanguageTextManager = applicationLanguageTextManager;
         }
 
         public async Task<GetLanguagesOutput> GetLanguages()
@@ -156,6 +161,88 @@ namespace BeiDreamAbp.Service.Localization
                 AbpSession.TenantId,
                 GetCultureInfoByChecking(language.Name).Name
                 );
+        }
+
+        public async Task<PagedResultOutput<LanguageTextListDto>> GetLanguageTexts(GetLanguageTextsInput input)
+        {
+            /* Note: This method is used by SPA without paging, MPA with paging.
+             * So, it can both usable with paging or not */
+
+            //Normalize base language name
+            if (input.BaseLanguageName.IsNullOrEmpty())
+            {
+                var defaultLanguage = await _applicationLanguageManager.GetDefaultLanguageOrNullAsync(AbpSession.TenantId);
+                if (defaultLanguage == null)
+                {
+                    defaultLanguage = (await _applicationLanguageManager.GetLanguagesAsync(AbpSession.TenantId)).FirstOrDefault();
+                    if (defaultLanguage == null)
+                    {
+                        throw new ApplicationException("No language found in the application!");
+                    }
+                }
+
+                input.BaseLanguageName = defaultLanguage.Name;
+            }
+
+            var source = LocalizationManager.GetSource(input.SourceName);
+            var baseCulture = CultureInfo.GetCultureInfo(input.BaseLanguageName);
+            var targetCulture = CultureInfo.GetCultureInfo(input.TargetLanguageName);
+
+            var languageTexts = source
+                .GetAllStrings()
+                .Select(localizedString => new LanguageTextListDto
+                {
+                    Key = localizedString.Name,
+                    BaseValue = _applicationLanguageTextManager.GetStringOrNull(AbpSession.TenantId, source.Name, baseCulture, localizedString.Name),
+                    TargetValue = _applicationLanguageTextManager.GetStringOrNull(AbpSession.TenantId, source.Name, targetCulture, localizedString.Name, false)
+                })
+                .AsQueryable();
+
+            //Filters
+            if (input.TargetValueFilter == "EMPTY")
+            {
+                languageTexts = languageTexts.Where(s => s.TargetValue.IsNullOrEmpty());
+            }
+
+            if (!input.FilterText.IsNullOrEmpty())
+            {
+                languageTexts = languageTexts.Where(
+                    l => (l.Key != null && l.Key.IndexOf(input.FilterText, StringComparison.CurrentCultureIgnoreCase) >= 0) ||
+                         (l.BaseValue != null && l.BaseValue.IndexOf(input.FilterText, StringComparison.CurrentCultureIgnoreCase) >= 0) ||
+                         (l.TargetValue != null && l.TargetValue.IndexOf(input.FilterText, StringComparison.CurrentCultureIgnoreCase) >= 0)
+                    );
+            }
+
+            var totalCount = languageTexts.Count();
+
+            //Ordering
+            if (!input.Sorting.IsNullOrEmpty())
+            {
+                languageTexts = languageTexts.OrderBy(input.Sorting);
+            }
+
+            //Paging
+            if (input.SkipCount > 0)
+            {
+                languageTexts = languageTexts.Skip(input.SkipCount);
+            }
+
+            if (input.MaxResultCount > 0)
+            {
+                languageTexts = languageTexts.Take(input.MaxResultCount);
+            }
+
+            return new PagedResultOutput<LanguageTextListDto>(
+                totalCount,
+                languageTexts.ToList()
+                );
+        }
+
+        public async Task UpdateLanguageText(UpdateLanguageTextInput input)
+        {
+            var culture = GetCultureInfoByChecking(input.LanguageName);
+            var source = LocalizationManager.GetSource(input.SourceName);
+            await _applicationLanguageTextManager.UpdateStringAsync(AbpSession.TenantId, source.Name, culture, input.Key, input.Value);
         }
     }
 }
