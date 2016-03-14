@@ -91,7 +91,7 @@ namespace BeiDreamAbp.Presentation.Controllers
             //Create view model
             var viewModel = new LanguageTextsViewModel();
 
-            viewModel.LanguageName = languages.Items.SingleOrDefault(p=>p.Id==id).DisplayName;
+            viewModel.LanguageName = languages.Items.SingleOrDefault(p=>p.Id==id).Name;
 
             viewModel.Languages = LocalizationManager.GetAllLanguages().ToList();
 
