@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
 using Abp.Application.Navigation;
 using Abp.Configuration.Startup;
 using Abp.Localization;
@@ -22,9 +23,10 @@ namespace BeiDreamAbp.Presentation.Controllers
         }
 
         // GET: Home
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             var tasks = _taskService.GetTasks(new GetTasksInput(){Name="AAAA"});
+            await _taskService.CreateOrUpdateTasks(new GetTasksInput(){Name="AAAA"});
             return View(tasks);
         }
     }

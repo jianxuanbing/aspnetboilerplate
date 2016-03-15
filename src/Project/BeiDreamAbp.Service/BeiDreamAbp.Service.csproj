@@ -82,6 +82,7 @@
     <Compile Include="Security\Dto\UserLoginInfoDto.cs" />
     <Compile Include="Security\ISecurityAppService.cs" />
     <Compile Include="Security\SecurityAppService.cs" />
+    <Compile Include="Tasks\CreateOrUpdateTasksHandler.cs" />
     <Compile Include="Tasks\Dtos\GetTaskInput.cs" />
     <Compile Include="Tasks\Dtos\GetTasksOutput.cs" />
     <Compile Include="Tasks\ITaskService.cs" />
