@@ -16,6 +16,8 @@ namespace BeiDreamAbp.Domain.Authorization
 
             //租赁方的权限集合添加,需配置为 multiTenancySides: MultiTenancySides.Host
             var tenants = pages.CreateChildPermission(PermissionNames.SystemsManagePages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
+            //租赁方的权限集合添加,需配置为 multiTenancySides: MultiTenancySides.Host
+            var editions = pages.CreateChildPermission(PermissionNames.SystemsManagePages_Editions, L("Editions"), multiTenancySides: MultiTenancySides.Host);
             //权限管理菜单
             var administration = pages.CreateChildPermission(PermissionNames.SystemsManagePages_Administration, L("Administration"));
             //用户管理

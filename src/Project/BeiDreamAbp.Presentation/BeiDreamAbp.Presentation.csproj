@@ -163,6 +163,8 @@
     <Content Include="Scripts\libs\abp.toastr.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Project\Account\Login.js" />
+    <Content Include="Scripts\Project\Editions\CreateOrEditModal.js" />
+    <Content Include="Scripts\Project\Editions\Index.js" />
     <Content Include="Scripts\Project\Languages\CreateOrEditModal.js" />
     <Content Include="Scripts\Project\Languages\EditTextModal.js" />
     <Content Include="Scripts\Project\Languages\Index.js" />
@@ -486,6 +488,19 @@
     <Content Include="Scripts\Vendor\jquery-validation\js\localization\methods_pt.js" />
     <Content Include="Scripts\Vendor\jquery-validation\js\localization\methods_pt.min.js" />
     <Content Include="Scripts\Vendor\jquery-validation\js\localization\_messages_empty.js" />
+    <Content Include="Scripts\Vendor\jstree\jstree.js" />
+    <Content Include="Scripts\Vendor\jstree\jstree.min.js" />
+    <Content Include="Scripts\Vendor\jstree\themes\default-dark\32px.png" />
+    <Content Include="Scripts\Vendor\jstree\themes\default-dark\40px.png" />
+    <Content Include="Scripts\Vendor\jstree\themes\default-dark\style.css" />
+    <Content Include="Scripts\Vendor\jstree\themes\default-dark\style.min.css" />
+    <Content Include="Scripts\Vendor\jstree\themes\default-dark\throbber.gif" />
+    <Content Include="Scripts\Vendor\jstree\themes\default\32px.png" />
+    <Content Include="Scripts\Vendor\jstree\themes\default\32px_line.png" />
+    <Content Include="Scripts\Vendor\jstree\themes\default\32px_original.png" />
+    <Content Include="Scripts\Vendor\jstree\themes\default\40px.png" />
+    <Content Include="Scripts\Vendor\jstree\themes\default\style.css" />
+    <Content Include="Scripts\Vendor\jstree\themes\default\throbber.gif" />
     <Content Include="Scripts\Vendor\layer\extend\layer.ext.js" />
     <Content Include="Scripts\Vendor\layer\layer.js" />
     <Content Include="Scripts\Vendor\layer\skin\default\icon-ext.png" />
@@ -521,6 +536,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BeiDreamAbpControllerBase.cs" />
+    <Compile Include="Controllers\EditionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LanguagesController.cs" />
     <Compile Include="Controllers\LayoutController.cs" />
@@ -532,7 +548,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account\LoginViewModel.cs" />
+    <Compile Include="Models\Common\IFeatureEditViewModel.cs" />
     <Compile Include="Models\Common\Modals\ModalHeaderViewModel.cs" />
+    <Compile Include="Models\Editions\CreateOrEditEditionModalViewModel.cs" />
     <Compile Include="Models\Home\LanguageSelectionViewModel.cs" />
     <Compile Include="Models\Home\SidebarViewModel.cs" />
     <Compile Include="Models\Home\UserMenuOrLoginLinkViewModel.cs" />
@@ -574,6 +592,8 @@
     <Content Include="Scripts\Vendor\bootstrap-select\bootstrap-select.js.map" />
     <Content Include="Scripts\Vendor\bootstrap-select\LICENSE" />
     <Content Include="Scripts\Vendor\bootstrap-select\README.md" />
+    <Content Include="Views\Editions\Index.cshtml" />
+    <Content Include="Views\Editions\_CreateOrEditModal.cshtml" />
     <None Include="Views\Languages\Index.cshtml" />
     <Content Include="Views\Languages\_CreateOrEditModal.cshtml" />
     <Content Include="Views\Languages\_TextModal.cshtml" />

@@ -1,0 +1,53 @@
+﻿@using Abp.Application.Editions
+@using Abp.Extensions
+@using BeiDreamAbp.Presentation.Models.Common.Modals
+@model BeiDreamAbp.Presentation.Models.Editions.CreateOrEditEditionModalViewModel
+<div id="CreateOrEditLanguageModal">
+    @Html.Partial("~/Views/Common/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(Model.IsEditMode ? ("编辑版本: " + Model.Edition.DisplayName) : "创建新版本"))
+
+    <div class="modal-body">
+        <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+                        版本信息
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">
+                       特性参数列表
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <form name="EditionInformationsForm" role="form" novalidate class="form-validation">
+
+                        @if (Model.IsEditMode)
+                        {
+                            <input type="hidden" name="Id" value="@Model.Edition.Id" />
+                        }
+
+                        <div class="form-group form-md-line-input form-md-floating-label">
+                            <input class="form-control@(Model.Edition.DisplayName.IsNullOrEmpty() ? "" : " edited")"
+                                   type="text" name="DisplayName"
+                                   value="@Model.Edition.DisplayName"
+                                   required
+                                   maxlength="@Edition.MaxDisplayNameLength">
+                            <label>@L("EditionName")</label>
+                        </div>
+
+                    </form>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    profile
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Views/Common/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+</div>

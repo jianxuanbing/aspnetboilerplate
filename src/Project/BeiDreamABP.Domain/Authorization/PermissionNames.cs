@@ -8,8 +8,10 @@
         //后台管理板块
         public const string SystemsManagePages = "SystemsManagePages";
 
-        //租赁方独有的权限列表
+        //租赁方独有的权限列表(租户管理)
         public const string SystemsManagePages_Tenants = "SystemsManagePages.Tenants";
+        //租赁方独有的权限列表(版本管理及版本的特性参数设置)
+        public const string SystemsManagePages_Editions = "SystemsManagePages.Editions";
 
         //租赁方和租户方通用的权限列表
         public const string SystemsManagePages_Administration = "SystemsManagePages.Administration";

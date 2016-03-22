@@ -18,6 +18,14 @@ namespace BeiDreamAbp.Presentation
                         icon: "fa fa-globe",
                         requiredPermissionName: PermissionNames.SystemsManagePages_Tenants
                         )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "Editions",
+                        L("Editions"),
+                        url: "/Editions",
+                        icon: "fa fa-globe",
+                        requiredPermissionName: PermissionNames.SystemsManagePages_Editions
+                        )
                 ).AddItem(new MenuItemDefinition(
                     "Administration",
                     L("Administration"),
